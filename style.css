@@ -1,0 +1,64 @@
+.rect-background{
+    background: rgba(255,255,255,0.8);
+    padding: 1em;
+    text-align: center;
+    border: 0.2em solid white;
+    font-weight: 900;
+    letter-spacing: 0.4em;
+    font-family: "Lato";
+    color: darkcyan;
+    text-indent: 0.4em;
+}
+
+.rect-background:hover{
+	background: white;
+	color: crimson;
+	cursor: pointer;
+}
+.events-row{
+	margin-top: 5em;
+}
+
+.events-container .col-md-4{
+	margin-bottom: 1em;
+}
+ul.tabs{
+        background: #060C22;
+}
+.modal{
+        width: 95% !important;
+}
+.tabs a{
+    font-family: Roboto;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+}
+.collapsible{
+    margin:0;
+}
+.collapsible-body {
+   padding: 2em;
+       background: #022348;
+}
+
+.kv{
+         padding: 0.5em;
+    background: darkslategray;    
+    color: white;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    display: inline-block;
+    margin: 0.5em;
+}
+.collapsible-header{
+        display: block;
+    cursor: pointer;
+    min-height: 3rem;
+    line-height: 3rem;
+    padding: 0 1rem;
+    background-color: #011832;
+    border-bottom: 1px solid #ddd;
+    color: white;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+}

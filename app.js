@@ -53,7 +53,17 @@ app.controller('TabController', function ($location, $scope) {
 		app.directive('events',[ '$http', function ($http) {
 		return {
 			restrict: 'E',
-			templateUrl: '/partials/tabs/events.html'
+			templateUrl: '/partials/tabs/events.html',
+			controller: function ($scope) {
+				$scope.openModal = function (theme) {
+					$scope.currentEvent = events[theme]
+					console.log($scope.currentEvent);
+					$scope.$evalAsync()
+					 $(document).ready(function () {
+					 	$('.modal').modal('open');
+					 })
+				}
+			}
 		}
 	}]);
 

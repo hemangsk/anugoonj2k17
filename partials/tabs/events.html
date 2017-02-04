@@ -1,57 +1,74 @@
 <div class="container events-container">
 <div class="row events-row">
 		<div class="col-md-4">
-			<div class="rect-background flow-text">MUSIC
+			<div ng-click="openModal('Music')" class="rect-background flow-text">MUSIC
 			</div>
 		</div>
 		<div class="col-md-4">
-<div class="rect-background flow-text">DANCE
+<div ng-click="openModal('Dance')" class="rect-background flow-text">DANCE
 			</div>
 		</div>
 		
-<div class="col-md-4"><div class="rect-background flow-text">DRAMATICS
+<div ng-click="openModal('Dramatic')" class="col-md-4"><div class="rect-background flow-text">DRAMATICS
 			</div></div>
 </div>
 
 <div class="row">
-		<div class="col-md-4"><div class="rect-background flow-text">MR &AMP; MS ANUGOONJ
+		<div ng-click="openModal('Anugoonj')" class="col-md-4"><div class="rect-background flow-text">MR &AMP; MS ANUGOONJ
 			</div></div>
-		<div class="col-md-4"><div class="rect-background flow-text">FINE ARTS
+		<div ng-click="openModal('FineArts')" class="col-md-4"><div class="rect-background flow-text">FINE ARTS
 			</div></div>
-		<div class="col-md-4"><div class="rect-background flow-text">LITERARY ARTS
+		<div ng-click="openModal('LiteraryEvents')" class="col-md-4"><div class="rect-background flow-text">LITERARY ARTS
 			</div></div>
 		
 
 </div>
 
 <div class="row">
-<div class="col-md-12"><div class="rect-background flow-text">BATTLE OF BANDS
+<div class="col-md-12"><div ng-click="openModal('BattleOfBands')" class="rect-background flow-text">BATTLE OF BANDS
 			</div></div>
 </div>
 </div>
-<style type="text/css">
-.rect-background{
-    background: rgba(255,255,255,0.8);
-    padding: 1em;
-    text-align: center;
-    border: 0.2em solid white;
-    font-weight: 900;
-    letter-spacing: 0.4em;
-    font-family: "Lato";
-    color: darkcyan;
-    text-indent: 0.4em;
-}
+ 
+ <!-- Modal Structure -->
+<div id="modal1" class="modal">
+  <ul class="collapsible" data-collapsible="accordion">
+    <li ng-repeat="(key, value) in currentEvent">
+      <div class="collapsible-header"><span ng-repeat="(ke, valu) in value">{{ke}}</span></div>
+      <div class="collapsible-body"><span ng-repeat="(ke, valu) in value">
+      <span class ="kv" ng-repeat="(k,v) in valu">
+  				    	{{k}} : {{v}}
+      </span></span></div>
+    </li>
+  </ul>
+ 
+</div>
 
-.rect-background:hover{
-	background: white;
-	color: crimson;
-	cursor: pointer;
-}
-.events-row{
-	margin-top: 5em;
-}
+<script type="text/javascript">
+	$(document).ready(function(){
+    // the "href" attribute of .modal-trigger must specify the modal ID that wants to be triggered
+   $('.modal').modal({
+      dismissible: true, // Modal can be dismissed by clicking outside of the modal
+      opacity: .5, // Opacity of modal background
+      inDuration: 300, // Transition in duration
+      outDuration: 200, // Transition out duration
+      startingTop: '4%', // Starting top style attribute
+      endingTop: '10%', // Ending top style attribute
+      ready: function(modal, trigger) { // Callback for Modal open. Modal and trigger 
+        console.log(modal, trigger);
+      },
+      complete: function() {  } // Callback for Modal close
+    }
+  );
+  });
 
-.events-container .col-md-4{
-	margin-bottom: 1em;
-}
-</style>
+	$(document).ready(function(){
+    $('ul.tabs').tabs({
+    	swipeable: true
+    });
+  });
+
+	  $(document).ready(function(){
+    $('.collapsible').collapsible();
+  });
+</script>

@@ -46,14 +46,14 @@ app.controller('TabController', function ($location, $scope) {
 	app.directive('home',[ '$http', function ($http) {
 		return {
 			restrict: 'E',
-			templateUrl: '/partials/tabs/home.html'
+			templateUrl: 'partials/tabs/home.html'
 		}
 	}]);
 
 		app.directive('events',[ '$http', function ($http) {
 		return {
 			restrict: 'E',
-			templateUrl: '/partials/tabs/events.html',
+			templateUrl: 'partials/tabs/events.html',
 			controller: function ($scope) {
 				$scope.openModal = function (theme) {
 					$scope.currentEvent = events[theme]
@@ -70,13 +70,13 @@ app.controller('TabController', function ($location, $scope) {
 			app.directive('sponsors',[ '$http', function ($http) {
 		return {
 			restrict: 'E',
-			templateUrl: '/partials/tabs/sponsors.html'
+			templateUrl: 'partials/tabs/sponsors.html'
 		}
 	}]);
 
 				app.directive('chat',[ '$http', function ($http) {
 		return {
 			restrict: 'E',
-			templateUrl: '/partials/tabs/chat.html'
+			templateUrl: 'partials/tabs/chat.html'
 		}
 	}]);
